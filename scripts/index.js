@@ -23,5 +23,5 @@ const ClickRecorder = (name) =>
       y: ev.layerY,
       name,
     };
-    await fetchJSON("post")("http://localhost:3000/api/save-click")(data);
+    await fetchJSON("post")("https://muzukd.deta.dev/api/save-click")(data);
   });
