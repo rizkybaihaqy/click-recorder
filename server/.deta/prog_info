@@ -1,0 +1,1 @@
+{"id":"ae6d7589-2984-4755-8511-64fb383f5931","space":47759,"runtime":"nodejs14.x","name":"click-recorder","path":"muzukd","project":"c0vzd7qk","account":"144798365827","region":"ap-southeast-1","deps":["cors@^2.8.5","deta@^1.1.0","dotenv@^16.0.3","express@^4.18.2","express-validator@^6.14.3"],"envs":null,"public":true,"log_level":"debug","cron":""}

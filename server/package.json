@@ -4,7 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --exec babel-node ./bin/www.js"
+    "clean": "rm -rf ./dist",
+    "build": "npm run clean && babel ./src --out-dir dist --copy-files",
+    "deta:build": "npm run build && mv ./dist/bin/deta.js ./index.js",
+    "deta:deploy": "npm run deta:build && deta deploy && mv ./index.js ./dist/bin/deta.js",
+    "dev": "nodemon --exec babel-node ./src/bin/www.js",
+    "start": "npm run build && node ./dist/bin/www.js"
   },
   "author": "",
   "license": "ISC",
@@ -20,6 +25,7 @@
     "@babel/core": "^7.20.12",
     "@babel/node": "^7.20.7",
     "@babel/preset-env": "^7.20.2",
+    "babel-plugin-add-module-exports": "^1.0.4",
     "nodemon": "^2.0.20"
   }
 }
