@@ -22,8 +22,9 @@ router.post(
   }
 );
 
-router.get("/get-all-click", async (_, res) => {
-  const dbRes = await db.fetch();
+router.post("/get-all-click", async (req, res) => {
+  const { name } = req.body;
+  const dbRes = await db.fetch({ name });
   res.send({ ok: true, data: dbRes });
 });
 
