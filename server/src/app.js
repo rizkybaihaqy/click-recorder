@@ -15,22 +15,18 @@ app.set("views", path.join(__dirname, "views"));
 
 app.use(morgan("dev"));
 
+app.use("/api", cors({ origin: "*" }), express.json(), apiRouter);
+
 app.use(
   "/",
   cookieParser(),
   express.urlencoded({ extended: true }),
   (req, res, next) => {
-    const { name = '' } = req.cookies;
+    const { name = "" } = req.cookies;
     res.locals = { name, ...res.locals };
     next();
   },
   webRouter
-);
-app.use(
-  "/api",
-  cors({ origin: "*" }),
-  express.json(),
-  apiRouter
 );
 
 export default app;
