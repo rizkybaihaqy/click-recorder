@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css"
+    />
+    <title>Click Recorder 🖱️</title>
+  </head>
+  <body>
+    <nav class="container-fluid">
+      <ul>
+        <li>
+          <h1>Dashboard</h1>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <form action="/logout" method="post">
+            <button type="submit" class="outline">Change Application</button>
+          </form>
+        </li>
+      </ul>
+    </nav>
+
+    <main class="container"><%~ it.body %></main>
+
+    <% if (it.name === '') { %>
+    <dialog open>
+      <article>
+        <form action="/login" method="post">
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Your App Name"
+          />
+          <button type="submit">Proceed</button>
+        </form>
+      </article>
+    </dialog>
+    <% } %>
+
+    <footer class="container-fluid">
+      <small>Built @ 2023</small>
+    </footer>
+  </body>
+</html>

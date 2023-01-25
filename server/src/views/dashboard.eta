@@ -1,0 +1,8 @@
+<% layout('./default') %>
+
+<h2>User Click Count <%= it.data.count %></h2>
+<form action="/api/get-all-click" method="post">
+  <button type="submit" name="name" value="<%= it.name %>">
+    Download JSON
+  </button>
+</form>
