@@ -1,0 +1,11 @@
+{
+  "name": "click-recorder",
+  "private": true,
+  "workspaces": [
+    "scripts",
+    "server"
+  ],
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
